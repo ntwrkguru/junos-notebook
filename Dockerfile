@@ -120,10 +120,3 @@ RUN chown -R $NB_USER:users /home/$NB_USER/.jupyter
 
 # Switch back to jovyan to avoid accidental container runs as root
 USER $NB_USER
-
-
-# Change owner so Notebook notebook can write to it
-# RUN chown -R jovyan:users /home/jovyan/.*
-
-# Kludge because .ansible/tmp ends up corrupted during the install
-# RUN rm -fr /home/jovyan/.ansible*
